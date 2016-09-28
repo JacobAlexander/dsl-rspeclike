@@ -18,11 +18,32 @@ class ExampleGroup
     block.call
   end
 
+  def expect(obj)
+    ObjectWithExpectation.new(obj)
+  end
+
+  def eq(val)
+  end
+
+end
+
+class ObjectWithExpectation
+
+  def initialize(object)
+    @object = object
+  end
+
+  def to(*)
+  end
+
+  def not_to(*)
+  end
+
 end
 
 
 describe "Amazing RSpeclike example" do
   it "works!" do
-    puts "hello"
+    expect(2+2).to eq(4)
   end
 end
